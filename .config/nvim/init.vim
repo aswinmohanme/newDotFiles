@@ -8,17 +8,19 @@ call plug#begin('~/.local/share/nvim/plugged')
 " PLUGINS
 " =====================
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tweekmonster/deoplete-clang2', {'for': ['c++', 'c']}
-Plug 'zchee/deoplete-jedi', {'for': 'python'}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript' }
+Plug 'tweekmonster/deoplete-clang2'
+Plug 'zchee/deoplete-jedi'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
 
-Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+Plug 'pangloss/vim-javascript'
 Plug 'mattn/emmet-vim'
-Plug 'mxw/vim-jsx', {'for': 'javascript'}
+Plug 'alvan/vim-closetag'
+Plug 'mxw/vim-jsx'
 
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/tslime.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/goyo.vim'
 
@@ -86,9 +88,19 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 nnoremap <Leader>f :NERDTreeToggle<Enter>
 
+let NERDTreeMouseMode=2
+
+augroup MouseInNERDTreeOnly
+    autocmd!
+    autocmd BufEnter NERD_tree_* set mouse=a
+    autocmd BufLeave NERD_tree_* set mouse=
+augroup END
+set mouse=
+
 let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize=25
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 
 " FZF
 " =====================
@@ -103,8 +115,10 @@ let g:tslime_normal_mapping = '<localleader>t'
 let g:tslime_visual_mapping = '<localleader>t'
 let g:tslime_vars_mapping = '<localleader>T'
 
-" EMMET
+" AUTOCLOSE HTML
 " ====================
-let g:user_emmet_leader_key='<C-e>'
-imap <expr> <C-e> emmet#expandAbbrIntelligent("\<C-e>")
-
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'

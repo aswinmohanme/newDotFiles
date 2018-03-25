@@ -4,7 +4,7 @@
 # ==================
 set -gx PATH /home/aswinmohanme/.yarn/bin $PATH
 set -gx PATH /home/aswinmohanme/.local/bin $PATH
-set -gx PATH /home/aswinmohanme/.nvm/versions/node/v8.5.0/bin $PATH
+set -gx PATH /home/aswinmohanme/.nvm/versions/node/*/bin $PATH
 
 # ANDROID
 set -x ANDROID_HOME /home/aswinmohanme/Android/Sdk
