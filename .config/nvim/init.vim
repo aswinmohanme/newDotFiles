@@ -20,7 +20,6 @@ Plug 'mxw/vim-jsx'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/tslime.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/goyo.vim'
 
@@ -57,6 +56,11 @@ set expandtab
 " Configure Fast File Finder
 set path+=**
 set wildignore+=*/node_modules/*,*/vendor/*
+
+" Triger `autoread` when files changes on disk
+autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " =====================
 " UI CONFIG
@@ -100,8 +104,6 @@ set mouse=
 let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=25
 
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
-
 " FZF
 " =====================
 nnoremap <leader>p :History<CR>
@@ -117,8 +119,9 @@ let g:tslime_vars_mapping = '<localleader>T'
 
 " AUTOCLOSE HTML
 " ====================
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx"
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb'
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
 let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
+
