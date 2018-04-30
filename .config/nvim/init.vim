@@ -70,7 +70,6 @@ set number
 set relativenumber
 
 " THEME
-" =====================
 syntax enable
 set background=dark
 let g:solarized_termcolors=256
@@ -79,14 +78,12 @@ colorscheme palenight
 
 
 " DEOPLETE
-" =====================
 let g:deoplete#enable_at_startup = 1
 set completeopt -=preview
 
 call deoplete#custom#source('clang2', 'min_pattern_length', 4)
 
 " NERDTREE
-" =====================
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
@@ -106,20 +103,17 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=25
 
 " FZF
-" =====================
 nnoremap <leader>p :History<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <c-p> :Files<CR>
 
 " TSLIME
-" =====================
 let g:tslime_ensure_trailing_newlines = 1
 let g:tslime_normal_mapping = '<localleader>t'
 let g:tslime_visual_mapping = '<localleader>t'
 let g:tslime_vars_mapping = '<localleader>T'
 
 " AUTOCLOSE HTML
-" ====================
 let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
 let g:closetag_emptyTags_caseSensitive = 1
