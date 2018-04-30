@@ -1,8 +1,9 @@
 " ==============================
+" NVIM CONFIG FILE
+" ==============================
+
 " PLUGIN MANAGER
 " ==============================
-" Specify a directory for plugins
-" - For Neovim: ~/.local/share/nvim/plugged
 call plug#begin('~/.local/share/nvim/plugged')
 
 " PLUGINS
@@ -48,12 +49,12 @@ set encoding=utf8
 
 let maplocalleader = "\\"
 
-" Configure TAB
+" TAB
 set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Configure Fast File Finder
+" Fast File Finder
 set path+=**
 set wildignore+=*/node_modules/*,*/vendor/*
 
