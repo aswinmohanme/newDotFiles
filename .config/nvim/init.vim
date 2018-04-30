@@ -26,12 +26,10 @@ Plug 'junegunn/goyo.vim'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-
 Plug 'jiangmiao/auto-pairs'
 Plug 'sbdchd/neoformat'
 
 Plug 'drewtempelmeyer/palenight.vim'
-
 Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
@@ -72,9 +70,9 @@ set relativenumber
 " THEME
 syntax enable
 set background=dark
+colorscheme palenight
 let g:solarized_termcolors=256
 set termguicolors
-colorscheme palenight
 
 
 " DEOPLETE
