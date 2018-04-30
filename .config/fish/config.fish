@@ -1,10 +1,11 @@
 
-# ==================
 # PATH
 # ==================
 set -gx PATH /home/aswinmohanme/.nvm/versions/node/*/bin $PATH
 
-# ANDROID
+# EDITING
+# ==================
+set -gx EDITOR nvim
 
 # FZF
 set -g -x FZF_DEFAULT_COMMAND 'ag --ignore-case --depth -1 -g ""'
