@@ -8,32 +8,30 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " PLUGINS
 " =====================
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'tweekmonster/deoplete-clang2'
 Plug 'zchee/deoplete-jedi'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
 
-Plug 'pangloss/vim-javascript'
-Plug 'mattn/emmet-vim'
-Plug 'alvan/vim-closetag'
 Plug 'mxw/vim-jsx'
+Plug 'alvan/vim-closetag'
+Plug 'pangloss/vim-javascript'
 
-Plug 'christoomey/vim-tmux-navigator'
 Plug 'sjl/tslime.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'junegunn/goyo.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'jiangmiao/auto-pairs'
 Plug 'sbdchd/neoformat'
+Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'wakatime/vim-wakatime'
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Initialize plugin system
 call plug#end()
+
 
 " =====================
 " EDITING CONFIGURATION
@@ -61,6 +59,7 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+
 " =====================
 " UI CONFIG
 " =====================
@@ -69,15 +68,19 @@ set relativenumber
 
 " THEME
 syntax enable
+set termguicolors
 set background=dark
 colorscheme palenight
 let g:solarized_termcolors=256
-set termguicolors
 
+
+" =====================
+" PLUGIN CONFIG
+" =====================
 
 " DEOPLETE
-let g:deoplete#enable_at_startup = 1
 set completeopt -=preview
+let g:deoplete#enable_at_startup = 1
 
 call deoplete#custom#source('clang2', 'min_pattern_length', 4)
 
@@ -101,20 +104,20 @@ let NERDTreeMinimalUI = 1
 let g:NERDTreeWinSize=25
 
 " FZF
-nnoremap <leader>p :History<CR>
-nnoremap <leader>b :Buffers<CR>
 nnoremap <c-p> :Files<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>p :History<CR>
 
 " TSLIME
 let g:tslime_ensure_trailing_newlines = 1
+let g:tslime_vars_mapping = '<localleader>T'
 let g:tslime_normal_mapping = '<localleader>t'
 let g:tslime_visual_mapping = '<localleader>t'
-let g:tslime_vars_mapping = '<localleader>T'
 
 " AUTOCLOSE HTML
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
-let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
-let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_shortcut = '>'
+let g:closetag_emptyTags_caseSensitive = 1
 let g:closetag_close_shortcut = '<leader>>'
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.js'
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.js"
 
