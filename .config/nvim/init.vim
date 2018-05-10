@@ -11,6 +11,10 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
+Plug 'tweekmonster/deoplete-clang2'
+
+Plug 'neovimhaskell/haskell-vim'
+Plug 'alx741/vim-hindent'
 
 Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
