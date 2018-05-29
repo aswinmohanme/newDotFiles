@@ -16,6 +16,8 @@ Plug 'tweekmonster/deoplete-clang2'
 Plug 'neovimhaskell/haskell-vim'
 Plug 'alx741/vim-hindent'
 
+Plug 'arrufat/vala.vim'
+
 Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
@@ -111,6 +113,9 @@ let g:NERDTreeWinSize=25
 nnoremap <c-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>p :History<CR>
+
+" VALA
+let g:vala_syntax_folding_enabled = 0
 
 " TSLIME
 let g:tslime_ensure_trailing_newlines = 1
