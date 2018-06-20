@@ -19,6 +19,7 @@ Plug 'alx741/vim-hindent'
 Plug 'arrufat/vala.vim'
 
 Plug 'mxw/vim-jsx'
+Plug 'galooshi/vim-import-js'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 
@@ -27,6 +28,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
 
+Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf.vim'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
