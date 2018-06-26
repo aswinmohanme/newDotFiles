@@ -19,7 +19,7 @@
 *color7: #f1cbb3
 *color15:                         #E8E8E8
 
-URxvt.font: xft:Iosevka Term Slab:size=11.8
+URxvt.font: xft:Iosevka Term Slab:size=11.4
 URxvt.boldFont:
 URxvt.depth:                      32
 URxvt*scrollBar:                  false

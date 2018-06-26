@@ -9,7 +9,7 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-font xft:Free Sans 12
+font xft:Nimbus Sans 14
 
 floating_modifier $mod
 
@@ -18,10 +18,10 @@ bindsym $mod+Return exec i3-sensible-terminal
 # Window kill command
 bindsym $mod+Shift+q kill
 
-# start program launcher
+# Start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
 
-# change focus
+# Change focus
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
@@ -267,3 +267,14 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+## CUSTOM
+
+# auto start apps
+exec --no-startup-id redshift
+
+# swap caps lock and escape
+exec_always --no-startup-id xmodmap -e "clear lock"
+exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
+
