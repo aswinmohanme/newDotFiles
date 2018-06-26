@@ -29,7 +29,6 @@ Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'wakatime/vim-wakatime'
-Plug 'drewtempelmeyer/palenight.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -70,10 +69,7 @@ set relativenumber
 
 " THEME
 syntax enable
-set termguicolors
 set background=dark
-colorscheme palenight
-let g:solarized_termcolors=256
 
 
 " =====================
