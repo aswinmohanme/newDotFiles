@@ -13,13 +13,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
 Plug 'tweekmonster/deoplete-clang2'
 
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
-
-Plug 'arrufat/vala.vim'
-
 Plug 'mxw/vim-jsx'
-Plug 'galooshi/vim-import-js'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
 
@@ -33,7 +27,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf.vim'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 Plug 'wakatime/vim-wakatime'
 Plug 'drewtempelmeyer/palenight.vim'
