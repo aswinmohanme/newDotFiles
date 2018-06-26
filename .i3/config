@@ -1,6 +1,6 @@
 set $mod Mod4
 
-new_window pixel 0
+new_window pixel 1
 new_float normal
 
 hide_edge_borders none
@@ -9,7 +9,7 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-font xft:Nimbus Sans 14
+font xft:Free Sans 11
 
 floating_modifier $mod
 
