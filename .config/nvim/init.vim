@@ -29,6 +29,7 @@ Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
 Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
@@ -71,7 +72,7 @@ set relativenumber
 " THEME
 syntax enable
 set background=dark
-colorscheme palenight
+colorscheme gruvbox
 
 
 " =====================
