@@ -278,3 +278,7 @@ exec_always --no-startup-id xmodmap -e "clear lock"
 exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
+# assign apps to specific workspace
+assign [class="Firefox"] $ws3
+assign [class="Gimp"] $ws4
+assign [class="Inkscape"] $ws4
