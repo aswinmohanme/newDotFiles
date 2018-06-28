@@ -280,5 +280,6 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # assign apps to specific workspace
 assign [class="Firefox"] $ws3
+assign [class="chrome"] $ws3
 assign [class="Gimp"] $ws4
 assign [class="Inkscape"] $ws4
