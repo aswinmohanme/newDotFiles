@@ -50,7 +50,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 
 # split orientation
 bindsym $mod+bar split h;exec notify-send 'tile horizontally'
-bindsym $mod+v split v;exec notify-send 'tile vertically'
+bindsym $mod+minus split v;exec notify-send 'tile vertically'
 bindsym $mod+Shift+q split toggle
 
 # toggle fullscreen mode for the focused container
@@ -78,7 +78,7 @@ bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
+# bindsym $mod+minus scratchpad show
 
 # navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
