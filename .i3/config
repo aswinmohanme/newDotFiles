@@ -272,6 +272,7 @@ mode "$mode_gaps_outer" {
 
 # auto start apps
 exec --no-startup-id redshift
+exec --no-startup-id /usr/bin/firefox
 
 # swap caps lock and escape
 exec_always --no-startup-id xmodmap -e "clear lock"
@@ -283,3 +284,6 @@ assign [class="Firefox"] $ws3
 assign [class="chrome"] $ws3
 assign [class="Gimp"] $ws4
 assign [class="Inkscape"] $ws4
+
+# assign custom screenshot app
+bindsym Print exec gnome-screenshot
