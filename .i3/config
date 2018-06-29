@@ -190,10 +190,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 5 px or 5 ppt
-        bindsym j resize grow height 5 px or 5 ppt
-        bindsym k resize shrink height 5 px or 5 ppt
-        bindsym l resize grow width 5 px or 5 ppt
+        bindsym h resize grow width 5 px or 5 ppt
+        bindsym j resize shrink height 5 px or 5 ppt
+        bindsym k resize grow height 5 px or 5 ppt
+        bindsym l resize shrink width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -280,8 +280,8 @@ exec_always --no-startup-id xmodmap -e "keycode 9 = Caps_Lock NoSymbol Caps_Lock
 exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # assign apps to specific workspace
-assign [class="Firefox"] $ws3
-assign [class="chrome"] $ws3
+assign [class="Firefox"] $ws2
+assign [class="chrome"] $ws2
 assign [class="Gimp"] $ws4
 assign [class="Inkscape"] $ws4
 
