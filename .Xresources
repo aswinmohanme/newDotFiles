@@ -19,8 +19,8 @@
 *color7: #f1cbb3
 *color15:                         #E8E8E8
 
-URxvt.font: xft:Iosevka Term Slab:size=12:minspace=False, xft:DejaVu Sans:pixelsize=18
-URxvt.boldFont:
+URxvt*font: xft:Iosevka Term Slab:size=12:minSpace=false:Droid Sans Mono:pixelsize=14,xft:DejaVu Sans Mono:pixelsize=14,xft:Droid Sans Fallback:pixelsize=14,xft:FreeSans:pixelsize=14,xft:FreeSans:pixelsize=14,
+URxvt*boldFont: 
 URxvt.depth:                      32
 URxvt*scrollBar:                  false
 URxvt*mouseWheelScrollPage:       false
