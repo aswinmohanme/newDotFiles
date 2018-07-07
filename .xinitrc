@@ -11,6 +11,11 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 DEFAULT_SESSION='i3 --shmlog-size 0'
 
+# Swap ESC and CAPS
+xmodmap "clear lock"
+xmodmap "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
+xmodmap "keycode 66 = Escape NoSymbol Escape"
+
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
@@ -65,8 +70,4 @@ get_session(){
 
 exec $(get_session)
 
-# Swap ESC and CAPS
-xmodmap "clear lock"
-xmodmap "keycode 9 = Caps_Lock NoSymbol Caps_Lock"
-xmodmap "keycode 66 = Escape NoSymbol Escape"
 
