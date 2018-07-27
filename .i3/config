@@ -272,7 +272,7 @@ mode "$mode_gaps_outer" {
 
 # auto start apps
 exec --no-startup-id redshift
-exec --no-startup-id /usr/bin/firefox
+exec --no-startup-id /usr/bin/google-chrome-stable
 
 # swap caps lock and escape
 exec_always --no-startup-id xmodmap -e "clear lock"
@@ -283,6 +283,7 @@ exec_always --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 assign [class="Firefox"] $ws1
 assign [class="chrome"] $ws1
 assign [class="code"] $ws2
+assign [class="android"] $ws2
 assign [class="Gimp"] $ws4
 assign [class="Inkscape"] $ws4
 
