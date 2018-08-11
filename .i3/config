@@ -152,8 +152,8 @@ for_window [class="Thus"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="Godot"] floating enable
-for_window [title=".*Godot Engine*."] floating disable
+for_window [class="Godot"] floating enable border normal
+for_window [title=".*Godot Engine*."] floating disable border none
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -273,6 +273,7 @@ mode "$mode_gaps_outer" {
 ## CUSTOM
 
 # auto start apps
+exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
 exec --no-startup-id redshift
 exec --no-startup-id /usr/bin/google-chrome-stable
 
