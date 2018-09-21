@@ -274,7 +274,7 @@ mode "$mode_gaps_outer" {
 
 # auto start apps
 exec --no-startup-id /usr/lib/geoclue-2.0/demos/agent
-exec --no-startup-id redshift-gtk
+exec --no-startup-id redshift -l 9.163739:76.642944
 exec --no-startup-id /usr/bin/google-chrome-stable
 
 # swap caps lock and escape

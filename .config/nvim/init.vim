@@ -27,6 +27,9 @@ Plug 'junegunn/fzf.vim'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
 
+Plug 'slashmili/alchemist.vim'
+Plug 'elixir-editors/vim-elixir'
+
 Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
 Plug 'wakatime/vim-wakatime'
