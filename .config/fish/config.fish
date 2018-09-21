@@ -11,7 +11,8 @@ set -gx PATH $ANDROID_HOME/tools/bin $PATH
 set -gx PATH $ANDROID/Sdk/platform-tools $PATH
 
 # FLUTTER
-set -gx PATH /opt/flutter/bin $PATH
+set --export FLUTTER_HOME $HOME/Flutter
+set -gx PATH $FLUTTER_HOME/flutter/bin $PATH
 
 # EDITING
 # ==================
