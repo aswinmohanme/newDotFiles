@@ -14,7 +14,6 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
 Plug 'mxw/vim-jsx'
 Plug 'alvan/vim-closetag'
 Plug 'pangloss/vim-javascript'
-Plug 'sevko/vim-nand2tetris-syntax'
 
 Plug 'sjl/tslime.vim'
 Plug 'scrooloose/nerdtree'
