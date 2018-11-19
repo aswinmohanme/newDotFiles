@@ -29,8 +29,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 
+Plug 'dart-lang/dart-vim-plugin'
+
 Plug 'drewtempelmeyer/palenight.vim'
-Plug 'morhetz/gruvbox'
 Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
@@ -73,7 +74,8 @@ set relativenumber
 " THEME
 syntax enable
 set background=dark
-colorscheme gruvbox
+colorscheme palenight
+set termguicolors
 
 
 " =====================

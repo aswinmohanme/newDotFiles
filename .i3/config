@@ -155,6 +155,8 @@ for_window [class="Xfburn"] floating enable
 for_window [class="Godot"] floating enable border normal
 for_window [title=".*Godot Engine*."] floating disable border none
 for_window [title=".*Android Emulator*."] floating enable border none
+for_window [class="Code"] fullscreen enable
+
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
