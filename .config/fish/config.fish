@@ -14,6 +14,9 @@ set -gx PATH $ANDROID/Sdk/platform-tools $PATH
 set --export FLUTTER_HOME $HOME/Flutter
 set -gx PATH $FLUTTER_HOME/flutter/bin $PATH
 
+# DART
+set -gx PATH $HOME/.pub-cache/bin $PATH
+
 # EDITING
 # ==================
 set -gx EDITOR nvim

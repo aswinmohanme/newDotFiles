@@ -29,6 +29,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'slashmili/alchemist.vim'
 Plug 'elixir-editors/vim-elixir'
 
+Plug 'natebosch/vim-lsc'
 Plug 'dart-lang/dart-vim-plugin'
 
 Plug 'drewtempelmeyer/palenight.vim'
@@ -114,6 +115,11 @@ nnoremap <leader>p :History<CR>
 
 " VALA
 let g:vala_syntax_folding_enabled = 0
+
+" LSC
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+let g:lsc_enable_autocomplete = v:true
+let g:lsc_auto_map = v:true " Use defaults
 
 " TSLIME
 let g:tslime_ensure_trailing_newlines = 1
