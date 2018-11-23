@@ -21,6 +21,9 @@ set -gx PATH $HOME/.pub-cache/bin $PATH
 # ==================
 set -gx EDITOR nvim
 
+# 256 Colors
+set --export TERM xterm-24bit
+
 # VI MODE
 function fish_mode_prompt; end
 #fish_vi_key_bindings
