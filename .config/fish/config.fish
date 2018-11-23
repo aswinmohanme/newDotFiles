@@ -23,7 +23,7 @@ set -gx EDITOR nvim
 
 # VI MODE
 function fish_mode_prompt; end
-fish_vi_key_bindings
+#fish_vi_key_bindings
 
 # FZF
 set -g -x FZF_DEFAULT_COMMAND 'ag --ignore-case --depth -1 -g ""'
