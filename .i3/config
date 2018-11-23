@@ -292,6 +292,7 @@ assign [class="Code"] $ws2
 assign [class="android"] $ws2
 assign [class="Gimp"] $ws4
 assign [class="Inkscape"] $ws4
+assign [class="Emacs"] $ws2
 
 # assign custom screenshot app
 bindsym Print exec gnome-screenshot
