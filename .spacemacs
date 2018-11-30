@@ -479,6 +479,10 @@ before packages are loaded."
     (org-babel-do-load-languages
      'org-babel-load-languages
      '((ditaa . t)))
+    ;; Set org-mode agenda files
+    (load-library "find-lisp")
+    (setq org-agenda-files
+          (find-lisp-find-files "~/Notes/projects" "\.org$"))
     )
   )
 
