@@ -2,6 +2,7 @@
 # PATH
 # ==================
 set -gx PATH /home/aswinmohanme/.nvm/versions/node/*/bin $PATH
+set -gx PATH /home/aswinmohanme/.local/bin $PATH
 
 # ANDROID
 set --export JAVA_HOME /usr/lib/jvm/java-8-jdk

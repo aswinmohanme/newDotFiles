@@ -40,27 +40,26 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     auto-completion
      multiple-cursors
      neotree
      shell
-
-     emacs-lisp
-
      org
      git
-     ;; markdown
-     ;; better-defaults
-     ;; spell-checking
-     ;; syntax-checking
-     ;; version-control
 
-     ;; Configuration
-     ;; Configure Shell to Start at Bottom
+     emacs-lisp
+     elixir
+     (haskell :variables
+              haskell-completion-backend 'intero)
      (shell :variables
             shell-default-shell 'eshell
             shell-default-height 30
             shell-default-position 'bottom)
+     (auto-completion :variables
+                      auto-completion-return-key-behavior 'complete
+                      auto-completion-tab-key-behavior 'cycle
+                      auto-completion-complete-with-key-sequence (kbd "jk")
+                      auto-completion-complete-with-key-sequence-delay 0.1
+                      auto-completion-private-snippets-directory nil)
      )
 
    ;; List of additional packages that will be installed without being
@@ -193,7 +192,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(doom-spacegrey
+   dotspacemacs-themes '(base16-material
+                         doom-spacegrey
                          spacemacs-dark
                          spacemacs-light)
 
@@ -463,8 +463,6 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-  ;; Temporary Fix for Ido and Helm
-  (ido-mode -1)
   ;; Org Mode Config
   (with-eval-after-load 'org
     ;; Add Global Line Wrap at 80 Columns
@@ -482,8 +480,10 @@ before packages are loaded."
     ;; Set org-mode agenda files
     (load-library "find-lisp")
     (setq org-agenda-files
-          (find-lisp-find-files "~/Notes/projects" "\.org$"))
+          (find-lisp-find-files "~/notes/projects" "\.org$"))
     )
+  ;; Config for neotree
+  (setq neo-theme 'ascii)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -501,7 +501,7 @@ This function is called at the very end of Spacemacs initialization."
  '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help yasnippet-snippets smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain magit-svn magit-gitflow htmlize helm-org-rifle helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy evil-org evil-magit magit magit-popup git-commit ghub treepy graphql with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete doom-themes ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file neotree nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
+    (ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode base16-theme intero flycheck hlint-refactor hindent helm-hoogle haskell-snippets haskell-mode company-cabal cmm-mode counsel swiper ivy xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help yasnippet-snippets smeargle orgit org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download org-brain magit-svn magit-gitflow htmlize helm-org-rifle helm-gitignore helm-git-grep helm-company helm-c-yasnippet gnuplot gitignore-templates gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy evil-org evil-magit magit magit-popup git-commit ghub treepy graphql with-editor company-statistics company auto-yasnippet yasnippet ac-ispell auto-complete doom-themes ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons restart-emacs request rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file neotree nameless move-text macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-flx helm-descbinds helm-ag google-translate golden-ratio font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word counsel-projectile column-enforce-mode clean-aindent-mode centered-cursor-mode auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
