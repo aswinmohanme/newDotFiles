@@ -8,22 +8,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " PLUGINS
 " =====================
-Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'}
-Plug 'tweekmonster/deoplete-clang2'
 
-Plug 'neovimhaskell/haskell-vim'
-Plug 'alx741/vim-hindent'
-
-Plug 'arrufat/vala.vim'
-
-Plug 'mxw/vim-jsx'
-Plug 'galooshi/vim-import-js'
-Plug 'alvan/vim-closetag'
-Plug 'pangloss/vim-javascript'
-
-Plug 'sjl/tslime.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
@@ -33,10 +19,9 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/fzf.vim'
 Plug 'sbdchd/neoformat'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-Plug 'wakatime/vim-wakatime'
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()
@@ -77,10 +62,9 @@ set relativenumber
 
 " THEME
 syntax enable
-set termguicolors
 set background=dark
 colorscheme palenight
-let g:solarized_termcolors=256
+set termguicolors
 
 
 " =====================
@@ -116,9 +100,6 @@ let g:NERDTreeWinSize=25
 nnoremap <c-p> :Files<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>p :History<CR>
-
-" VALA
-let g:vala_syntax_folding_enabled = 0
 
 " TSLIME
 let g:tslime_ensure_trailing_newlines = 1
