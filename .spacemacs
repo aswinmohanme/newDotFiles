@@ -40,11 +40,21 @@ This function should only modify configuration layer settings."
      ;; `M-m f e R' (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      helm
-     emacs-lisp
      git
      multiple-cursors
+     neotree
+
+     html
+     elixir
+     python
+     emacs-lisp
+
+     (dart :variables
+           dart-sdk-path "/home/aswinmohanme/Flutter/flutter/bin/cache/dart-sdk/"
+           dart-analysis-server t
+           dart-format-on-save t)
      (shell :variables
-            shell-default-shell 'eshell
+            shell-default-shell 'ansi-term
             shell-default-height 30
             shell-default-position 'bottom)
      (auto-completion :variables
@@ -52,7 +62,7 @@ This function should only modify configuration layer settings."
                       auto-completion-tab-key-behavior 'cycle
                       auto-completion-complete-with-key-sequence (kbd "jk")
                       auto-completion-complete-with-key-sequence-delay 0.1
-                      auto-completion-private-snippets-directory nil)    neotree
+                      auto-completion-private-snippets-directory nil)
      ;; markdown
      ;; org
      ;; (shell :variables
@@ -463,6 +473,8 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  (setq neo-theme 'ascii)
+  (setq multi-term-program "/bin/fish")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -479,7 +491,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (doom-modeline smartparens evil yasnippet-snippets xterm-color ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package undo-tree toc-org symon string-inflection spaceline-all-the-icons smeargle shrink-path shell-pop restart-emacs rainbow-delimiters popwin persp-mode pcre2el password-generator paradox overseer org-plus-contrib org-bullets open-junk-file neotree nameless multi-term move-text magit-svn magit-gitflow macrostep lorem-ipsum link-hint indent-guide hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag goto-chg google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy font-lock+ flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav eldoc-eval editorconfig dumb-jump dotenv-mode diminish define-word counsel-projectile company-statistics column-enforce-mode clean-aindent-mode centered-cursor-mode base16-theme auto-yasnippet auto-highlight-symbol auto-compile aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (web-mode web-beautify tagedit slim-mode scss-mode sass-mode pug-mode prettier-js impatient-mode htmlize simple-httpd helm-css-scss haml-mode emmet-mode company-web web-completion-data yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen use-package toc-org symon string-inflection spaceline-all-the-icons smeargle shell-pop restart-emacs rainbow-delimiters pyvenv pytest pyenv-mode py-isort popwin pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer org-bullets open-junk-file ob-elixir neotree nameless multi-term move-text magit-svn magit-gitflow macrostep lorem-ipsum live-py-mode link-hint indent-guide importmagic hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link fuzzy font-lock+ flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help elisp-slime-nav editorconfig dumb-jump dotenv-mode doom-modeline diminish define-word dart-mode cython-mode counsel-projectile company-statistics company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode base16-theme auto-yasnippet auto-highlight-symbol auto-compile alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

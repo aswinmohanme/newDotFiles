@@ -30,3 +30,14 @@ set -g -x FZF_CTRL_T_COMMAND 'ag --ignore-case --depth -1 -g ""'
 
 # NVIM JUNK CHARACTERS FIX
 export VTE_VERSION="402"
+
+# EMACS
+# emacs ansi-term support
+if test -n "$EMACS"
+  set -x TERM eterm-color
+end
+
+# this function may be required
+function fish_title
+  true
+end
