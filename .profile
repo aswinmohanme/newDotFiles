@@ -2,6 +2,7 @@
 # ==================
 export PATH="/home/aswinmohanme/.nvm/versions/node/v10.15.0/bin:$PATH"
 export PATH="/home/aswinmohanme/.local/bin:$PATH"
+export PATH="/home/aswinmohanme/.gem/ruby/2.6.0/bin:$PATH"
 
 # ANDROID
 export JAVA_HOME="/usr/lib/jvm/default"
