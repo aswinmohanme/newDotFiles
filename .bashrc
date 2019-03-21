@@ -147,6 +147,3 @@ export NVM_DIR="$HOME/.nvm"
 
 # added by travis gem
 [ -f /home/aswinmohanme/.travis/travis.sh ] && source /home/aswinmohanme/.travis/travis.sh
-
-# Start rescue time on startup
-/usr/bin/rescuetime >/dev/null 2>&1
