@@ -33,7 +33,7 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(yaml
+   '(
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -46,6 +46,7 @@ This function should only modify configuration layer settings."
      org
 
      html
+     yaml
      elixir
      python
      emacs-lisp
@@ -53,16 +54,11 @@ This function should only modify configuration layer settings."
      major-modes
      markdown
      ruby
-     yaml
 
      (javascript :variables
            javascript-disable-tern-port-files nil)
      (graphviz :variables
                graphviz-dot-revert-delay 1)
-     (dart :variables
-           dart-sdk-path "/home/aswinmohanme/Flutter/flutter/bin/cache/dart-sdk/"
-           dart-analysis-server t
-           dart-format-on-save t)
      (shell :variables
             shell-default-shell 'ansi-term
             shell-default-height 30
@@ -78,9 +74,6 @@ This function should only modify configuration layer settings."
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      enable-flyspell-auto-completion t)
-     ;; markdown
-     ;; syntax-checking
-     ;; version-control
      )
 
    ;; List of additional packages that will be installed without being
@@ -485,6 +478,10 @@ Put your configuration code here, except for variables that should be set
 before packages are loaded."
   (setq neo-theme 'ascii)
   (setq multi-term-program "/bin/fish")
+
+  ;; Spacemacs truncate lines and navigate visually
+  (spacemacs/toggle-truncate-lines-on)
+  (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
