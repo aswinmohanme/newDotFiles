@@ -43,7 +43,6 @@ This function should only modify configuration layer settings."
      git
      multiple-cursors
      neotree
-     org
 
      html
      yaml
@@ -54,6 +53,8 @@ This function should only modify configuration layer settings."
      major-modes
      markdown
      ruby
+     c-c++
+     kotlin
 
      (javascript :variables
            javascript-disable-tern-port-files nil)
@@ -74,6 +75,15 @@ This function should only modify configuration layer settings."
      (spell-checking :variables
                      spell-checking-enable-by-default nil
                      enable-flyspell-auto-completion t)
+     (org :variables
+          org-enable-org-journal-support t
+          org-journal-dir "~/Brain/journal/"
+          org-journal-file-format "%Y-%m-%d"
+          org-journal-date-prefix "#+TITLE: "
+          org-journal-date-format "%A, %B %d %Y"
+          org-journal-time-prefix "* "
+          org-journal-time-format ""
+          org-startup-folded nil)
      )
 
    ;; List of additional packages that will be installed without being
@@ -226,7 +236,7 @@ It should only modify the values of Spacemacs settings."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Iosevka Term Slab"
-                               :size 16
+                               :size 15
                                :weight normal
                                :width normal)
 
@@ -479,9 +489,12 @@ before packages are loaded."
   (setq neo-theme 'ascii)
   (setq multi-term-program "/bin/fish")
 
-  ;; Spacemacs truncate lines and navigate visually
-  (spacemacs/toggle-truncate-lines-on)
-  (add-hook 'text-mode-hook 'spacemacs/toggle-visual-line-navigation-on)
+  ;; Spacemacs Line Wrap
+  (defun org-line-wrap ()
+    (spacemacs/toggle-visual-line-navigation-on)
+    (setq-local word-wrap nil))
+
+  (add-hook 'text-mode-hook 'org-line-wrap)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -498,7 +511,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (visual-fill-column yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode wolfram-mode winum which-key web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe vala-snippets vala-mode uuidgen use-package toc-org thrift tagedit symon string-inflection stan-mode spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters racket-mode qml-mode pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pkgbuild-mode pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-elixir neotree nameless multi-term move-text mmm-mode matlab-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum logcat livid-mode live-py-mode link-hint kivy-mode json-navigator json-mode js2-refactor js-doc indent-guide importmagic impatient-mode hungry-delete hoon-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-popup flyspell-correct-helm flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig ebuild-mode dumb-jump dotenv-mode doom-modeline diminish define-word dart-mode cython-mode counsel-projectile company-web company-tern company-statistics company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode base16-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
+    (kotlin-mode helm-rtags google-c-style disaster company-rtags rtags company-c-headers clang-format visual-fill-column yasnippet-snippets yapfify xterm-color ws-butler writeroom-mode wolfram-mode winum which-key web-mode web-beautify wakatime-mode volatile-highlights vi-tilde-fringe vala-snippets vala-mode uuidgen use-package toc-org thrift tagedit symon string-inflection stan-mode spaceline-all-the-icons smeargle slim-mode shell-pop scss-mode scad-mode sass-mode restart-emacs rainbow-delimiters racket-mode qml-mode pyvenv pytest pyenv-mode py-isort pug-mode prettier-js popwin pkgbuild-mode pippel pipenv pip-requirements persp-mode pcre2el password-generator paradox overseer orgit org-projectile org-present org-pomodoro org-mime org-download org-bullets org-brain open-junk-file ob-elixir neotree nameless multi-term move-text mmm-mode matlab-mode markdown-toc magit-svn magit-gitflow macrostep lorem-ipsum logcat livid-mode live-py-mode link-hint kivy-mode json-navigator json-mode js2-refactor js-doc indent-guide importmagic impatient-mode hungry-delete hoon-mode hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-pydoc helm-purpose helm-projectile helm-org-rifle helm-mode-manager helm-make helm-gitignore helm-git-grep helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag graphviz-dot-mode google-translate golden-ratio gnuplot gitignore-templates gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy font-lock+ flyspell-popup flyspell-correct-helm flycheck-mix flycheck-credo flx-ido fill-column-indicator fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-cleverparens evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help emmet-mode elisp-slime-nav editorconfig ebuild-mode dumb-jump dotenv-mode doom-modeline diminish define-word dart-mode cython-mode counsel-projectile company-web company-tern company-statistics company-anaconda column-enforce-mode clean-aindent-mode centered-cursor-mode base16-theme auto-yasnippet auto-highlight-symbol auto-dictionary auto-compile arduino-mode alchemist aggressive-indent ace-window ace-link ace-jump-helm-line ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
